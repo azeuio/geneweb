@@ -7,14 +7,14 @@ on:
     paths-ignore:
       - '**/*.md'
       - 'docs/**'
-      - '.github/**'
+      #- '.github/**'
   pull_request:
     branches:
       - '**'
     paths-ignore:
       - '**/*.md'
       - 'docs/**'
-      - '.github/**'
+      #- '.github/**'
 #
 jobs:
   test:
@@ -37,7 +37,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pytest pytest-cov
-          pip install .
+          pip install -e .
       - name: Generate test documentation
         run: |
           make gen_test_doc
