@@ -37,9 +37,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pytest pytest-cov
-      - name: Run tests
-        run: |
-          make tests-cov
       - name: Generate test documentation
         run: |
           make gen_test_doc
@@ -52,3 +49,8 @@ jobs:
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is automatically provided by GitHub Actions
+
+      - name: Run tests
+        run: |
+          make tests-cov
+      
